@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Share</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="banner">
+        <h1>File Share</h1>
+    </div>
+    <section class="container">
+        
+        <div class="content">
+            <h3>Share your files easily !</h3>
+            
+            <img src="/media/transfer_files.svg" alt="Transfer Files">
+            
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                
+                <label for="file">File:</label>
+                <input type="file" name="file" id="file" required />
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" />
+                <button type="submit">Share</button>
+            </form>
+
+            <% if ( locals.fileLink != null) { %>
+
+                <div class="created-link">
+                    Here is your file share link : &nbsp;<a href="<%= locals.fileLink %>" > Link </a>
+                </div>
+
+            <% } %>
+
+        </div>  
+    </section>
+
+</body>
+</html>
